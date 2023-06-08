@@ -1,8 +1,5 @@
-
-from .model.fruit_model import FruitModel
-from .factory.factory_fruit_model import FactoryFruitModel
 from ..service.abstract.abstract_db import DBServices
-from .abstract.abstract_fruit_repo import FruitRepo
+from . import *
 
 class FruitRepository(FruitRepo):
     db: DBServices
