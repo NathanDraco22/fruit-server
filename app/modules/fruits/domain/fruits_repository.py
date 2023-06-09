@@ -8,6 +8,8 @@ class FruitRepository(FruitRepo):
         self.db = db
         pass
 
+    def create_fruit():
+        pass
 
     def get_all_fruits(self) -> list[FruitModel]:
         raw_data = self.db.fetch_all()
@@ -23,4 +25,4 @@ class FruitRepository(FruitRepo):
         return model
     
     def delete_fruit(self, id: int) -> bool:
-        return True
+        return self.db.delete(id=id)

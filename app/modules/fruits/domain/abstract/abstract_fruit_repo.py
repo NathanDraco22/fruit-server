@@ -5,6 +5,10 @@ from ..model.fruit_model import FruitModel
 class FruitRepo(ABC):
 
     @abstractmethod
+    def create_fruit():
+        pass
+
+    @abstractmethod
     def get_all_fruits(self) -> list[FruitModel]:
         pass
 
