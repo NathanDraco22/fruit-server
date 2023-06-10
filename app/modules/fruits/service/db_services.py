@@ -37,11 +37,7 @@ class DBSimulate(DBServices):
 
     def create(self, obj: dict) -> dict:
         fake_data.append(obj)
-        resp = {
-            "id" : len(fake_data - 1),
-            "msg" : "created"
-        }
-        return resp
+        return obj
 
     def fetch_all(self) -> list[dict]:
         return fake_data

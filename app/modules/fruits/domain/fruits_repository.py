@@ -1,5 +1,8 @@
 from ..service.abstract.abstract_db import DBServices
 from . import *
+from rich.console import Console
+
+console = Console()
 
 class FruitRepository(FruitRepo):
     db: DBServices
@@ -8,8 +11,10 @@ class FruitRepository(FruitRepo):
         self.db = db
         pass
 
-    def create_fruit():
-        pass
+    def create_fruit(self,create_dto: CreateFruitDTO) -> FruitModel:
+        json_dict = FactoryFruitModel.create_fruit_json(create_dto)
+        resp = self.db.create(json_dict)
+        return FactoryFruitModel.fromJsonDict(resp)
 
     def get_all_fruits(self) -> list[FruitModel]:
         raw_data = self.db.fetch_all()

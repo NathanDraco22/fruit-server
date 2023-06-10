@@ -5,7 +5,7 @@ from ..model.fruit_model import FruitModel
 class FruitRepo(ABC):
 
     @abstractmethod
-    def create_fruit():
+    def create_fruit() -> FruitModel:
         pass
 
     @abstractmethod
