@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Path, Body
+from fastapi import APIRouter, Path
 from ..domain import FruitRepository, FruitModel, CreateFruitDTO
 from ..service.db_services import DBSimulate
 
@@ -8,7 +8,6 @@ repo : FruitRepository = FruitRepository(db= DBSimulate() )
 @fruit_router.get("", response_model= list[FruitModel])
 async def get_all_fruits():
     return repo.get_all_fruits()
-
 
 @fruit_router.get("/{id}", response_model=FruitModel)
 async def get_by_id(id: int = Path()):
